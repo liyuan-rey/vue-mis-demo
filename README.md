@@ -1,4 +1,6 @@
-# vue-mis-demo
+# Vue MIS Demo
+
+Use Vue.js to implement general UI layouts for Management Information System(MIS).
 
 ## Project setup
 ```
