@@ -1,0 +1,12 @@
+{
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.vue"],
+      "options": {
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    }
+  ]
+}

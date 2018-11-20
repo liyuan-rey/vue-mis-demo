@@ -1,0 +1,35 @@
+<template>
+  <div class="cls-sidebar">Sidebar
+    <!-- <div class="toggle">
+      <a href="">| | |</a>
+    </div>
+    <div
+      *ngFor="let item of navData"
+      class="nav-page"
+      [class.active]="isPageActived(item)"
+      (click)="togglePage($event, item)"
+    >
+      <div class="nav-page-title sidebar-trans">
+        <span>{{item.label}}</span>
+      </div>
+      <ul
+        class="sidebar-trans"
+        [style.max-height.px]="isPageActived(item) ? item.children.length * 40 : 0"
+      >
+        <li
+          *ngFor="let child of item.children"
+          [class.active]="isPageActived(item) && currentItemId === child.id"
+        >
+          <a routerLink="child.uri" (click)="itemClick($event, child)">{{child.label}}</a>
+        </li>
+      </ul>
+    </div>-->
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({ components: {} })
+export default class Sidebar extends Vue {}
+</script>

@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <topbar class="App-header"></topbar>
+    <sidebar class="App-nav"></sidebar>
+    <div class="App-content">
+      <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+import Sidebar from '@/views/sidebar/sidebar.vue';
+import Topbar from '@/views/topbar/topbar.vue';
+
+@Component({
+  components: {
+    Topbar,
+    Sidebar,
+  },
+})
+export default class App extends Vue {}
+</script>
 
 <style lang="scss">
 #app {
