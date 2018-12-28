@@ -3,7 +3,7 @@
     <topbar class="App-header"></topbar>
     <sidebar class="App-nav"></sidebar>
     <div class="App-content">
-      <router-view/>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -23,22 +23,51 @@ import Topbar from '@/views/topbar/topbar.vue';
 export default class App extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="css">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+.App-header {
+  display: block;
+  color: white;
+  background-color: rgb(55, 61, 65);
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+.App-nav {
+  position: fixed;
+  top: 50px;
+  bottom: 0px;
+  left: 0px;
+  color: white;
+  background-color: rgb(51, 55, 68);
+  width: 180px;
+  height: 100%;
+  font-size: 12px;
+}
+
+.App-content {
+  position: absolute;
+  top: 50px;
+  left: 180px;
+  bottom: 0px;
+  right: 0px;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgb(234, 237, 241);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>

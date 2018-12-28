@@ -27,9 +27,79 @@
   </div>
 </template>
 
-<script lang="ts">
+<script scoped lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({ components: {} })
 export default class Sidebar extends Vue {}
 </script>
+
+<style lang="css">
+:host {
+  width: 180px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar-trans {
+  transition: max-height 0.12s ease;
+}
+
+.toggle {
+  height: 30px;
+  width: 100%;
+  color: #aeb9c2;
+  background-color: #4a5064;
+  text-align: center;
+  line-height: 30px !important;
+}
+
+.nav-page {
+  width: 100%;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.nav-page .nav-page-title {
+  height: 40px;
+  line-height: 40px;
+  background-color: #42485b;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.nav-page .nav-page-title:hover {
+  background: #00c1de;
+}
+
+.nav-page ul {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.nav-page li a {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  display: block;
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+
+.nav-page li a:hover {
+  background-color: #4a5064;
+}
+
+.nav-page li.active a {
+  background: #00c1de;
+}
+</style>
