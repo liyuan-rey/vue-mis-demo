@@ -1,11 +1,54 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
+#
+# 注意:
+# 本 EditorConfig 模板文件中定义的的规则范围为: Universal Properties supported by all plugins (被全体工具支持的配置项).
+# 而 Universal Properties supported by part of plugins (受部分 plugins 支持的规则) 和 Domain-Specific Properties (领
+# 域特定的规则) 不在此模板中定义，但可以在使用此模板的具体项目中根据需要定义.
+#
+# 具体配置项说明请见: https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+#
+
 # top-most EditorConfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
 [*]
+# Use utf-8 encoding and Unix-style newlines with a newline ending every file.
 charset = utf-8
 end_of_line = lf
+insert_final_newline = true
+# Most files follow these rules.
 indent_style = space
 indent_size = 2
+tab_width = unset # This defaults to the value of indent_size.
+trim_trailing_whitespace = true
+
+## Demo for partial supported Universal Properties and Domain-Specific Properties
+#max_line_length = unset # Universal Properties supported by part of plugins
+#quote_type = unset # Domain-Specific Properties
+
+[*.{htm, html, js, ts, css, scss, less, xml}]
+
+[*.{java, gradle}]
+indent_size = 4
+
+[*.{cs, cshtml}]
+indent_size = 4
+
+[*.{md, markdown}]
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
+indent_size = unset # Reset for avoiding confusion
+tab_width = 4
+
+# 以“重置”的方式定义排除项在文件尾部
+[{node_modules/**, packages/**}]
+charset = unset
+end_of_line = unset
+indent_style = unset
+indent_size = unset
+tab_width = unset
+trim_trailing_whitespace = unset
+insert_final_newline = unset
