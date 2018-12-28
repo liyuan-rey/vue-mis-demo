@@ -1,26 +1,35 @@
-{
-  "printWidth": 120,
-  "semi": true,
-  "singleQuote": false,
-  "jsxSingleQuote": false,
-  "trailingComma": "none",
-  "bracketSpacing": true,
-  "jsxBracketSameLine": false,
-  "arrowParens": "avoid",
-  "htmlWhitespaceSensitivity": "css",
-  "overrides": [
-    {
-      "files": ["*.js", "*.ts", "*.vue"],
-      "options": {
-        "singleQuote": true,
-        "trailingComma": "es5"
-      }
-    },
-    {
-      "files": ["*.md", "*.markdown"],
-      "options": {
-        "proseWrap": "never"
-      }
-    }
-  ]
-}
+# Template file of Prettier's configuration used with EditorConfig.
+# Using YAML other than JSON cause we need comments.
+
+## These are duplicated items with EditorConfig, so we don't re-define them.
+#useTabs: false
+#tabWidth: 2
+#endOfLine: "lf"
+
+## Belows are Prettier specified options.
+# If use Prettier alone with ESLint or TSLint, you may like:
+# eslint-config-prettier/eslint-plugin-prettier
+# tslint-config-prettier/tslint-plugin-prettier
+# following https:#prettier.io/docs/en/eslint.html for more infomation.
+#
+# Prettier's(1.15) support for Vue are still not mature, we suggest
+# turn-off it in esbenp.prettier-vscode(vscode plugin for prettier) by editing
+# vscode's settings with prettier.disableLanguages: ["vue"].
+
+printWidth: 120
+semi: true
+singleQuote: false
+jsxSingleQuote: false
+trailingComma: "none"
+bracketSpacing: true
+jsxBracketSameLine: false
+arrowParens: "avoid"
+htmlWhitespaceSensitivity: "css"
+overrides:
+  - files: ["*.js", "*.ts", "*.vue"]
+    options:
+      singleQuote: true
+      trailingComma: "es5"
+  - files: ["*.md", "*.markdown"]
+    options:
+      proseWrap: "never"
