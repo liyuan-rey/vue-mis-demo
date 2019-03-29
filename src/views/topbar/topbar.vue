@@ -6,7 +6,7 @@
     <div class="title pull-left">Vue MIS Demo</div>
     <div class="info pull-right">
       <div class="notice pull-left">{{ noticeCount }}</div>
-      <div class="user pull-left">{{ loginUser.username }}</div>
+      <div class="user pull-left">{{ loginUser ? loginUser.username: null }}</div>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ import { User } from '../../shared/user';
 
 @Component({ components: {} })
 export default class Topbar extends Vue {
-  private loginUser!: User;
+  private loginUser?: User;
   private noticeCount: number = 0;
 
   public data() {
