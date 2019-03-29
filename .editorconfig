@@ -1,10 +1,15 @@
-# EditorConfig is awesome: https://EditorConfig.org
+# EditorConfig: https://EditorConfig.org
 
 #
 # 注意:
 # 本 EditorConfig 模板文件中定义的的规则范围为: Universal Properties supported by all plugins (被全体工具支持的配置项).
 # 而 Universal Properties supported by part of plugins (受部分 plugins 支持的规则) 和 Domain-Specific Properties (领
 # 域特定的规则) 不在此模板中定义，但可以在使用此模板的具体项目中根据需要定义.
+#
+# 例如 partial supported Universal Properties:
+#max_line_length = unset # Universal Properties supported by part of plugins
+# 再如 Domain-Specific Properties:
+#quote_type = unset # Domain-Specific Properties
 #
 # 具体配置项说明请见: https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
 #
@@ -22,10 +27,6 @@ indent_style = space
 indent_size = 2
 tab_width = unset # This defaults to the value of indent_size.
 trim_trailing_whitespace = true
-
-## Demo for partial supported Universal Properties and Domain-Specific Properties
-#max_line_length = unset # Universal Properties supported by part of plugins
-#quote_type = unset # Domain-Specific Properties
 
 [*.{htm, html, js, ts, css, scss, less, xml}]
 

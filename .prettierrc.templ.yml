@@ -1,13 +1,8 @@
 # Template file of Prettier's configuration used with EditorConfig.
 # Using YAML other than JSON cause we need comments.
 
-## These are duplicated items with EditorConfig, so we don't re-define them.
-#useTabs: false
-#tabWidth: 2
-#endOfLine: "lf"
-
 ## Belows are Prettier specified options.
-# If use Prettier alone with ESLint or TSLint, you may like:
+# If use Prettier with ESLint or TSLint, you may like:
 # eslint-config-prettier/eslint-plugin-prettier
 # tslint-config-prettier/tslint-plugin-prettier
 # following https:#prettier.io/docs/en/eslint.html for more infomation.
@@ -17,6 +12,8 @@
 # vscode's settings with prettier.disableLanguages: ["vue"].
 
 printWidth: 120
+useTabs: false
+tabWidth: 2
 semi: true
 singleQuote: false
 jsxSingleQuote: false
@@ -25,6 +22,7 @@ bracketSpacing: true
 jsxBracketSameLine: false
 arrowParens: "avoid"
 htmlWhitespaceSensitivity: "css"
+endOfLine: "lf"
 overrides:
   - files: ["*.js", "*.ts", "*.vue"]
     options:
