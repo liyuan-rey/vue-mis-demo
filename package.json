@@ -9,28 +9,28 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "vue": "^2.5.17",
+    "vue": "^2.6.10",
     "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^7.0.0",
-    "vue-router": "^3.0.1"
+    "vue-property-decorator": "^7.3.0",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@types/chai": "^4.1.0",
-    "@types/mocha": "^5.2.4",
-    "@vue/cli-plugin-babel": "^3.1.1",
-    "@vue/cli-plugin-typescript": "^3.1.1",
-    "@vue/cli-plugin-unit-mocha": "^3.1.1",
-    "@vue/cli-service": "^3.1.1",
-    "@vue/test-utils": "^1.0.0-beta.20",
+    "@types/mocha": "^5.2.6",
+    "@vue/cli-plugin-babel": "^3.5.3",
+    "@vue/cli-plugin-typescript": "^3.5.3",
+    "@vue/cli-plugin-unit-mocha": "^3.5.1",
+    "@vue/cli-service": "^3.5.3",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "chai": "^4.1.2",
-    "node-sass": "^4.9.0",
-    "prettier": "^1.15.3",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
     "sass-loader": "^7.0.1",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.16.0",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "typescript": "^3.3.4000",
+    "vue-template-compiler": "^2.6.10"
   },
   "postcss": {
     "plugins": {
