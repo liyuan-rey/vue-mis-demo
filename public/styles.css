@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", "Microsoft YaHei UI";
+  font-size: 12px;
 }
 
 a {
@@ -28,9 +29,9 @@ ol {
 }
 
 .level-urgent {
-  background-color: rgba(255, 0, 0, 0.60);
+  background-color: rgba(255, 0, 0, 0.6);
 }
 
 .level-normal {
-  background-color: rgba(0, 0, 255, 0.60);
+  background-color: rgba(0, 0, 255, 0.6);
 }

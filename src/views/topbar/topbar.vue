@@ -27,7 +27,7 @@ export default class Topbar extends Vue {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
 .logo {
   margin-right: 1px;
   border-right: 1px solid #2a2f32;
@@ -48,19 +48,19 @@ export default class Topbar extends Vue {
   right: 0px;
   margin-left: 1px;
   border-left: 1px solid #2a2f32;
-}
 
-.info .user {
-  position: relative;
-  padding-left: 12px;
-  padding-right: 12px;
-}
+  .user {
+    position: relative;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
-.info .notice {
-  position: relative;
-  margin-right: 1px;
-  border-right: 1px solid #2a2f32;
-  padding-left: 12px;
-  padding-right: 12px;
+  .notice {
+    position: relative;
+    margin-right: 1px;
+    border-right: 1px solid #2a2f32;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 </style>

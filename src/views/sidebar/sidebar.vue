@@ -1,40 +1,68 @@
 <template>
-  <div class="cls-sidebar">Sidebar
-    <!-- <div class="toggle">
+  <div>
+    <div class="toggle">
       <a href="">| | |</a>
     </div>
     <div
-      *ngFor="let item of navData"
+      v-for="item in navData"
+      :key="item.id"
       class="nav-page"
-      [class.active]="isPageActived(item)"
-      (click)="togglePage($event, item)"
+      v-bind:class="{ active: isPageActived(item) }"
+      v-on:click="togglePage($event, item)"
     >
       <div class="nav-page-title sidebar-trans">
-        <span>{{item.label}}</span>
+        <span>{{ item.label }}</span>
       </div>
       <ul
         class="sidebar-trans"
-        [style.max-height.px]="isPageActived(item) ? item.children.length * 40 : 0"
+        v-bind:style="{ maxHeight: (isPageActived(item) ? item.children.length * 40 : 0) + 'px' }"
       >
         <li
-          *ngFor="let child of item.children"
-          [class.active]="isPageActived(item) && currentItemId === child.id"
+          v-for="child in item.children"
+          :key="child.id"
+          v-bind:class="{ active: isPageActived(item) && currentItemId === child.id }"
         >
-          <a routerLink="child.uri" (click)="itemClick($event, child)">{{child.label}}</a>
+          <router-link v-bind:to="child.uri" v-on:click="itemClick($event, child)">{{ child.label }}</router-link>
         </li>
       </ul>
-    </div>-->
+    </div>
   </div>
 </template>
 
 <script scoped lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import svc from '../../shared/client-sdk';
+import { NavigationItem } from './shared/navigation-item';
 
 @Component({ components: {} })
-export default class Sidebar extends Vue {}
+export default class Sidebar extends Vue {
+  data() {
+    const nav: NavigationItem[] = svc.getNavigationSettings();
+    return {
+      navData: nav,
+      activedPageId: nav[0].id,
+      currentItemId: nav[0].children[0].id,
+    };
+  }
+
+  isPageActived(p: NavigationItem) {
+    return p.id === this.$data.activedPageId;
+  }
+
+  togglePage(e: any, p: NavigationItem) {
+    e.preventDefault();
+    this.$data.activedPageId = !this.isPageActived(p) ? p.id : null;
+  }
+
+  itemClick(e: any, item: NavigationItem) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.$data.currentItemId = item.id;
+  }
+}
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
 :host {
   width: 180px;
   height: 100%;
@@ -59,47 +87,47 @@ export default class Sidebar extends Vue {}
   color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
-}
 
-.nav-page .nav-page-title {
-  height: 40px;
-  line-height: 40px;
-  background-color: #42485b;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
+  .nav-page-title {
+    height: 40px;
+    line-height: 40px;
+    background-color: #42485b;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
 
-.nav-page .nav-page-title:hover {
-  background: #00c1de;
-}
+  .nav-page-title:hover {
+    background: #00c1de;
+  }
 
-.nav-page ul {
-  width: 200px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+  ul {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
-.nav-page li a {
-  color: #fff;
-  text-align: center;
-  position: relative;
-  display: block;
-  width: 180px;
-  height: 40px;
-  line-height: 40px;
-  overflow: hidden;
-}
+  li a {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+  }
 
-.nav-page li a:hover {
-  background-color: #4a5064;
-}
+  li a:hover {
+    background-color: #4a5064;
+  }
 
-.nav-page li.active a {
-  background: #00c1de;
+  li.active a {
+    background: #00c1de;
+  }
 }
 </style>
