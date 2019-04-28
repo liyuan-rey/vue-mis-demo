@@ -59,19 +59,15 @@ import svc from '../../../shared/client-sdk';
 
 @Component({ components: {} })
 export default class PendingList extends Vue {
+  getLevelStyle = getLevelStyle;
+  getLevelTitle = getLevelTitle;
+
   data() {
     return {
-      common: {
-        getLevelStyle: getLevelStyle,
-        getLevelTitle: getLevelTitle,
-      },
       currentIncident: null,
       incidents: svc.getIncidentListSimple(),
     };
   }
-
-  getLevelStyle = getLevelStyle;
-  getLevelTitle = getLevelTitle;
 
   selectIncident(e: any, id: string) {
     e.preventDefault();
@@ -127,9 +123,6 @@ export default class PendingList extends Vue {
             font-size: 14px;
             margin-top: 12px;
             margin-bottom: 10px;
-          }
-
-          .desc {
           }
         }
       }

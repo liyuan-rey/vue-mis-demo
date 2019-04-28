@@ -11,5 +11,5 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class GroundForces extends Vue {}
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>

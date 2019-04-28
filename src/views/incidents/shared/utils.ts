@@ -1,8 +1,8 @@
-const LevelStyle = {
+const LevelStyle: any = {
   1: ['level-urgent', '紧急'],
   2: ['', ''],
   3: ['level-normal ', '普通'],
-  4: ['', '']
+  4: ['', ''],
 };
 
 export function getLevelStyle(level: number): string {
