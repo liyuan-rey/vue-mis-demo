@@ -17,13 +17,9 @@
         class="sidebar-trans"
         v-bind:style="{ maxHeight: (isPageActived(item) ? item.children.length * 40 : 0) + 'px' }"
       >
-        <li
-          v-for="child in item.children"
-          :key="child.id"
-          v-bind:class="{ active: isPageActived(item) && currentItemId === child.id }"
-        >
-          <router-link v-bind:to="child.uri" v-on:click="itemClick($event, child)">{{ child.label }}</router-link>
-        </li>
+        <router-link tag="li" v-bind:to="child.uri" v-for="child in item.children" :key="child.id">
+          {{ child.label }}
+        </router-link>
       </ul>
     </div>
   </div>
@@ -41,7 +37,6 @@ export default class Sidebar extends Vue {
     return {
       navData: nav,
       activedPageId: nav[0].id,
-      currentItemId: nav[0].children[0].id,
     };
   }
 
@@ -51,13 +46,9 @@ export default class Sidebar extends Vue {
 
   togglePage(e: any, p: NavigationItem) {
     e.preventDefault();
-    this.$data.activedPageId = !this.isPageActived(p) ? p.id : null;
-  }
-
-  itemClick(e: any, item: NavigationItem) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.$data.currentItemId = item.id;
+    if (!this.isPageActived(p)) {
+      this.$data.activedPageId = p.id;
+    }
   }
 }
 </script>
@@ -111,7 +102,7 @@ export default class Sidebar extends Vue {
     overflow-x: hidden;
   }
 
-  li a {
+  li {
     color: #fff;
     text-align: center;
     position: relative;
@@ -122,11 +113,11 @@ export default class Sidebar extends Vue {
     overflow: hidden;
   }
 
-  li a:hover {
+  li:hover {
     background-color: #4a5064;
   }
 
-  li.active a {
+  li.router-link-active {
     background: #00c1de;
   }
 }

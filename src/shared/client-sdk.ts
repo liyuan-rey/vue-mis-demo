@@ -10,16 +10,16 @@ const navigationSettings: NavigationItem[] = [
     label: '警情管理',
     children: [
       ({ id: uniqueId(), label: '当前警情', uri: '/incidents/pending-list' } as any) as NavigationItem,
-      ({ id: uniqueId(), label: '历史警情', uri: '' } as any) as NavigationItem,
+      ({ id: uniqueId(), label: '历史警情', uri: '/incidents/history-list' } as any) as NavigationItem,
     ],
   },
   {
     id: uniqueId(),
     label: '资源管理',
     children: [
-      ({ id: uniqueId(), label: '资源人', uri: '/forces/ground-forces' } as any) as NavigationItem,
-      ({ id: uniqueId(), label: '资源车', uri: '' } as any) as NavigationItem,
-      ({ id: uniqueId(), label: '资源物资', uri: '' } as any) as NavigationItem,
+      ({ id: uniqueId(), label: '资源人', uri: '/forces/officer-list' } as any) as NavigationItem,
+      ({ id: uniqueId(), label: '资源车', uri: '/forces/vehicle-list' } as any) as NavigationItem,
+      ({ id: uniqueId(), label: '资源物资', uri: '/forces/material-list' } as any) as NavigationItem,
     ],
   },
 ];
