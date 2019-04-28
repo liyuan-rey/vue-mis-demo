@@ -23,7 +23,7 @@ import Topbar from '@/views/topbar/topbar.vue';
 export default class App extends Vue {}
 </script>
 
-<style lang="css">
+<style lang="scss">
 #app {
   width: 100%;
   height: 100%;

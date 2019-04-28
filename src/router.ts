@@ -20,6 +20,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "pending-list" */ './views/incidents/pending-list/pending-list.vue'),
     },
     {
+      path: '/forces/ground-forces',
+      name: 'ground-forces',
+      component: () => import(/* webpackChunkName: "ground-forces" */ './views/forces/ground-forces/ground-forces.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
